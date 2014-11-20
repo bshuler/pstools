@@ -74,13 +74,14 @@ if __name__ == '__main__':
                     stanza = index.group(2)
                 elif kv:
                     res['host'] = host
+                    res['conf'] = conf
                     res['file'] = kv.group(1)
                     res['stanza'] = stanza
                     res['key'] = kv.group(2)
                     res['value'] = kv.group(3)
                     results.append(res)
         logger.debug(pprint.pformat(results))
-        si.outputResults(results, fields=['host','file','stanza','key','value'])
+        si.outputResults(results, fields=['host','conf','file','stanza','key','value'])
         logger.debug("exited __main__")
     except Exception, e:
         si.generateErrorResults(e)
