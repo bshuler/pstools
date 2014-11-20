@@ -3,6 +3,7 @@ import splunk.Intersplunk as si
 import os
 import logging, logging.handlers
 import splunk
+import pprint
 
 def setup_logging():
     logger = logging.getLogger('splunk.btool')    
@@ -21,23 +22,27 @@ def setup_logging():
     return logger
 
 if __name__ == '__main__':
+    logger = setup_logging()
 
+    # Set this when debugging
+    # logger.setLevel(logging.DEBUG)
+    
+    logger.debug("entered __main__")
     conf=''
     stanza_asked=''
-    logger = setup_logging()
     try:
         if len(sys.argv) >1:
             conf = sys.argv[1]
-            logger.info("conf='" + conf + "'")
+            logger.debug("conf='" + conf + "'")
         else:
             raise Exception("Usage: prebtool confName [stanza]")
 
         if len(sys.argv) >2:
             stanza_asked = sys.argv[2]
-            logger.info("stanza='" + stanza_asked + "'")
+            logger.debug("stanza='" + stanza_asked + "'")
         else:
             stanza_asked = ''
-            logger.info("stanza not passed")
+            logger.debug("stanza not passed")
 
         re_commands = re.compile("(^[\w\-\_]+$)") 
         conf_match = re_commands.match(conf.strip())
@@ -47,7 +52,7 @@ if __name__ == '__main__':
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         proc_out, proc_err = proc.communicate()
         
-        logger.info(proc_out)
+        logger.debug(proc_out)
 
         if not proc_err == '':
             raise Exception("prebtool returned something in stderr: '%s'" % proc_err)
@@ -74,8 +79,8 @@ if __name__ == '__main__':
                     res['key'] = kv.group(2)
                     res['value'] = kv.group(3)
                     results.append(res)
-
-        si.outputResults(results)
-
+        logger.debug(pprint.pformat(results))
+        si.outputResults(results, fields=['host','file','stanza','key','value'])
+        logger.debug("exited __main__")
     except Exception, e:
         si.generateErrorResults(e)
