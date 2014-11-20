@@ -1,0 +1,15 @@
+<dashboard>
+  <label>Data Preview</label>
+  <description>Data Preview</description>
+  <row>
+    <panel>
+      <title>Data Preview</title>
+      <html> 
+			<form>
+              <input type="text" id="filepath" style="width:280; height:50; font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif; font-size:22px"/>
+              <button type="button" name="submit" onclick="preview();return false;">Preview</button>
+			</form>      
+		</html>
+    </panel>
+  </row>
+</dashboard>

@@ -1,0 +1,5 @@
+sid,search,"splunk_server","_time","is_realtime","event_count","exec_time","result_count","savedsearch_name","scan_count",status,"total_run_time","__mv_sid","__mv_search","__mv_splunk_server","__mv__time","__mv_is_realtime","__mv_event_count","__mv_exec_time","__mv_result_count","__mv_savedsearch_name","__mv_scan_count","__mv_status","__mv_total_run_time"
+"admin__admin__ok__search3_1416454788.18","search index=_internal | head 1000 | top sourcetype","MacBook-Pro.local","1416454788.989984",0,1000,1416454789,6,search3,3025,completed,"0.441000",,,,,,,,,,,,
+"admin__admin__ok__search2_1416454826.20","search index=_internal | stats count by sourcetype","MacBook-Pro.local","1416454826.462763",0,1794204,1416454826,17,search2,1794204,completed,"9.255000",,,,,,,,,,,,
+"rt_1416477985.3","| metadata type=sourcetypes | search totalCount > 0","MacBook-Pro.local","1416477985.566489",1,0,1416477985,0,,0,canceled,"33.185000",,,,,,,,,,,,
+"rt_1416478101.6","| metadata type=sourcetypes | search totalCount > 0","MacBook-Pro.local","1416478101.428442",1,0,1416478101,0,,0,canceled,"38.174000",,,,,,,,,,,,
