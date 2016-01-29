@@ -1,0 +1,33 @@
+<setup>
+    <block title="The slackit search command">
+        <text>Configure the Slack API </text>
+    </block>
+
+    <block title="Server" endpoint="admin/slack" entity="slack">
+        <input field="url">
+            <label>Webhook URL</label>
+            <type>text</type>
+        </input>
+        <text><![CDATA[
+          In order to obtain the Webhook URL you have to create a new
+          incoming webhook integration for you Slack instance.
+          See <a href="https://api.slack.com/incoming-webhooks">Incoming Webhooks Docs</a> for details.
+        ]]></text>
+        <input field="username">
+            <label>Slack Username</label>
+            <type>text</type>
+        </input>
+        <input field="channel">
+            <label>Slack Channel</label>
+            <type>text</type>
+        </input>
+        <input field="proxy">
+            <label>Webhook Proxy</label>
+            <type>text</type>
+        </input>
+        <text><![CDATA[
+          If you need to utilize a HTTP proxy to access the Webhook URL, enter it here.
+        ]]></text>
+    </block>
+
+</setup>

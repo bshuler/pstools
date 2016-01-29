@@ -1,0 +1,16 @@
+[]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[app/install/install_source_checksum]
+version = 6.3.2
+modtime = 1453732390.648546000
+
+[alert_actions/slack]
+owner = admin
+version = 6.3.2
+modtime = 1453911695.256293000
+
+[app/install/is_configured]
+version = 6.3.2
+modtime = 1453911695.263678000

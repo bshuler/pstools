@@ -1,0 +1,11 @@
+[app/install/install_source_checksum]
+version = 6.3.2
+modtime = 1453732341.813316000
+
+[alert_actions/slack]
+version = 6.3.2
+modtime = 1453736751.315387000
+
+[app/install/is_configured]
+version = 6.3.2
+modtime = 1453736751.326080000

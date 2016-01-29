@@ -1,0 +1,25 @@
+<setup>
+    <block title="Slack Alert Action">
+        <text>Configure the Slack API </text>
+    </block>
+
+    <block title="Server" endpoint="admin/alert_actions" entity="slack">
+        <input field="param.webhook_url">
+            <label>Webhook URL</label>
+            <type>text</type>
+        </input>
+        <text><![CDATA[
+          In order to obtain the Webhook URL you have to create a new
+          incoming webhook integration for you Slack instance.
+          See <a href="https://api.slack.com/incoming-webhooks">Incoming Webhooks Docs</a> for details.
+        ]]></text>
+        <input field="param.webhook_proxy">
+            <label>Webhook Proxy</label>
+            <type>text</type>
+        </input>
+        <text><![CDATA[
+          If you need to utilize a HTTP proxy to access the Webhook URL, enter it here.
+        ]]></text>
+    </block>
+
+</setup>
