@@ -9,6 +9,7 @@ import pprint
 import socket
 from os.path import expanduser
 import urllib
+import re
 
 def setup_logging():
     logger = logging.getLogger('splunk.test')    
@@ -69,7 +70,7 @@ if __name__ == '__main__':
         search = urllib.unquote(sys.argv[1])
 
         logger.debug('search = '+search)
-        proc = subprocess.Popen(['splunk', 'search',  search, '-output', 'csv'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        proc = subprocess.Popen(['strace', '-ttt','-T', 'splunk', 'search',  search, '-output', 'csv', '-maxout','0'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         
         proc_out, proc_err = proc.communicate()
         
@@ -77,16 +78,24 @@ if __name__ == '__main__':
         logger.debug(pprint.pformat(proc_out))
         logger.debug('Ending Output')
 
-        if not proc_err == '':
-            raise Exception("prestrace returned something in stderr: '%s'" % proc_err)
+        #if not proc_err == '':
+        #    raise Exception("prestrace returned something in stderr: '%s'" % proc_err)
 
-        lines = proc_out.split("\n")
+        lines = proc_err.split("\n")
         
         results = []
+
+	re_time = re.compile(r'^(\d+\.\d\d\d)\d+\s+(\w+).*\<(\d+\.\d+)\>')
+
         for line in lines:
             if line != '':
                 res = {}
                 res['_raw'] = line
+		m = re_time.match(line)
+		if m:
+  			res['_time'] = m.group(1)
+  			res['call'] = m.group(2)
+  			res['duration'] = m.group(3)
                 results.append(res)
         logger.debug(pprint.pformat(results))
         si.outputResults(results, fields=['_raw'])

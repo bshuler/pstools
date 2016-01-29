@@ -1,3 +1,29 @@
 [app/install/install_source_checksum]
 version = 6.2.0
 modtime = 1415979109.228736000
+
+[app/ui]
+version = 6.3.0
+modtime = 1444948894.911680000
+
+[app/launcher]
+version = 6.3.0
+modtime = 1444948894.913273000
+
+[app/package/check_for_updates]
+version = 6.3.0
+modtime = 1444948894.913939000
+
+[views/strace_example_1]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.3.0
+modtime = 1444949859.662147000
+
+[views/strace_example_2]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.3.0
+modtime = 1444949872.330345000
