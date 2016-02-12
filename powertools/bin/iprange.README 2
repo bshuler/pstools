@@ -1,0 +1,6 @@
+# Test lookup via splunk
+# | stats count | eval low_ip="127.0.0.1" | eval high_ip="127.0.1.1"| lookup iprange low_ip high_ip
+#
+# Test lookup via terminal
+# You can edit the test.csv to contain the MD5 you want to test with
+# ./test.sh

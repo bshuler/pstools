@@ -1,0 +1,30 @@
+<form>
+  <label>wgetxls</label>
+  <fieldset submitButton="true" autoRun="true">
+    <input type="text" token="field1">
+      <label>Search</label>
+      <default>| wgetxls url="https://www.dropbox.com/s/7kkn0bnorvqaef6/table.xls?dl=0&amp;raw=1"</default>
+    </input>
+    <input type="text" token="field2">
+      <label>format</label>
+      <default>| fields - _raw _time line_number | table *</default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>wgetxls</title>
+      <table>
+        <search>
+          <query>$field1$ $field2$</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="drilldown">cell</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

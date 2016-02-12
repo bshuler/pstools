@@ -1,0 +1,26 @@
+<form>
+  <label>wget</label>
+  <fieldset submitButton="true" autoRun="true">
+    <input type="text" token="field1">
+      <label>Search</label>
+      <default>| wget url="http://real-chart.finance.yahoo.com/table.csv?s=SPLK&amp;d=2&amp;e=18&amp;f=2015&amp;g=d&amp;a=3&amp;b=19&amp;c=2012&amp;ignore=.csv"</default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>wget</title>
+      <table>
+        <search>
+          <query>$field1$</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="drilldown">cell</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

@@ -1,0 +1,26 @@
+<form>
+  <label>wgetgzip</label>
+  <fieldset submitButton="true" autoRun="true">
+    <input type="text" token="field1">
+      <label>Search</label>
+      <default>| wgetgzip url="http://list.iblocklist.com/?list=tor"</default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>wgetgzip</title>
+      <table>
+        <search>
+          <query>$field1$</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="drilldown">cell</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

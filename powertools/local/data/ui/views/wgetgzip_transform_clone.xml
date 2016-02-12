@@ -1,0 +1,30 @@
+<form>
+  <label>wgetgzip transform</label>
+  <fieldset submitButton="true" autoRun="true">
+    <input type="text" token="field1">
+      <label>Search</label>
+      <default>| stats count | eval url="http://list.iblocklist.com/?list=tor"</default>
+    </input>
+    <input type="text" token="field2">
+      <label>transform</label>
+      <default>| lookup wgetgzip url | table web_response</default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>wgetgzip transform</title>
+      <table>
+        <search>
+          <query>$field1$ $field2$</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="drilldown">cell</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

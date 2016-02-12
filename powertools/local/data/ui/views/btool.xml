@@ -1,0 +1,96 @@
+<form>
+  <label>btool</label>
+  <fieldset submitButton="true">
+    <input type="dropdown" token="conf" searchWhenChanged="false">
+      <label>Config File</label>
+      <choice value="404_bad_urlconf">404_bad_urlconf</choice>
+      <choice value="alert_actions">alert_actions</choice>
+      <choice value="app">app</choice>
+      <choice value="audit">audit</choice>
+      <choice value="authentication">authentication</choice>
+      <choice value="authorize">authorize</choice>
+      <choice value="collections">collections</choice>
+      <choice value="commands">commands</choice>
+      <choice value="conf">conf</choice>
+      <choice value="conf_checker">conf_checker</choice>
+      <choice value="config">config</choice>
+      <choice value="configurations">configurations</choice>
+      <choice value="crawl">crawl</choice>
+      <choice value="datamodels">datamodels</choice>
+      <choice value="datatypesbnf">datatypesbnf</choice>
+      <choice value="default-mode">default-mode</choice>
+      <choice value="deployment">deployment</choice>
+      <choice value="deploymentclient">deploymentclient</choice>
+      <choice value="distsearch">distsearch</choice>
+      <choice value="event_renderers">event_renderers</choice>
+      <choice value="eventdiscoverer">eventdiscoverer</choice>
+      <choice value="eventtypes">eventtypes</choice>
+      <choice value="fields">fields</choice>
+      <choice value="indexes">indexes</choice>
+      <choice value="inputs">inputs</choice>
+      <choice value="launcher">launcher</choice>
+      <choice value="ldap">ldap</choice>
+      <choice value="limits">limits</choice>
+      <choice value="literals">literals</choice>
+      <choice value="logging">logging</choice>
+      <choice value="macros">macros</choice>
+      <choice value="managementconsole_configure">managementconsole_configure</choice>
+      <choice value="migration">migration</choice>
+      <choice value="multikv">multikv</choice>
+      <choice value="outputs">outputs</choice>
+      <choice value="page_config">page_config</choice>
+      <choice value="pdf_server">pdf_server</choice>
+      <choice value="prefs">prefs</choice>
+      <choice value="procmon-filters">procmon-filters</choice>
+      <choice value="props">props</choice>
+      <choice value="pubsub">pubsub</choice>
+      <choice value="restmap">restmap</choice>
+      <choice value="savedsearches">savedsearches</choice>
+      <choice value="search_distributed_config">search_distributed_config</choice>
+      <choice value="searchbnf">searchbnf</choice>
+      <choice value="segmenters">segmenters</choice>
+      <choice value="server">server</choice>
+      <choice value="serverclass">serverclass</choice>
+      <choice value="source-classifier">source-classifier</choice>
+      <choice value="sourcetypes">sourcetypes</choice>
+      <choice value="splunk-launch">splunk-launch</choice>
+      <choice value="splunk_management_console_assets">splunk_management_console_assets</choice>
+      <choice value="tags">tags</choice>
+      <choice value="times">times</choice>
+      <choice value="transactiontypes">transactiontypes</choice>
+      <choice value="transforms">transforms</choice>
+      <choice value="ui-prefs">ui-prefs</choice>
+      <choice value="user-prefs">user-prefs</choice>
+      <choice value="user-seed">user-seed</choice>
+      <choice value="viewstates">viewstates</choice>
+      <choice value="web">web</choice>
+      <choice value="wmi">wmi</choice>
+      <choice value="workflow_actions">workflow_actions</choice>
+      <default>props</default>
+    </input>
+    <input type="dropdown" token="stanza">
+      <search>
+        <query>| btool $conf$ | table stanza | dedup stanza | sort stanza</query>
+      </search>
+      <fieldForLabel>stanza</fieldForLabel>
+      <fieldForValue>stanza</fieldForValue>
+      <choice value="">All</choice>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <table>
+        <search>
+          <query>| btool $conf$ $stanza$</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="drilldown">cell</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

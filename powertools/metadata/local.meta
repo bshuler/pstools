@@ -1,0 +1,103 @@
+[app/ui]
+version = 6.2.2
+modtime = 1426689942.003217000
+
+[app/launcher]
+version = 6.2.2
+modtime = 1426689942.014059000
+
+[views/wget]
+owner = admin
+version = 6.2.2
+modtime = 1426692923.851593000
+
+[commands/btool]
+access = read : [ * ], write : [ admin, power ]
+export = system
+owner = nobody
+version = 6.2.2
+modtime = 1426694894.979465000
+
+[transforms/iprange]
+access = read : [ * ], write : [ admin, power ]
+export = system
+owner = nobody
+version = 6.2.2
+modtime = 1426694916.622089000
+
+[commands/prebtool]
+access = read : [ * ], write : [ admin, power ]
+export = system
+owner = nobody
+version = 6.2.2
+modtime = 1426694929.941783000
+
+[commands/wget]
+access = read : [ * ], write : [ admin, power ]
+export = system
+owner = nobody
+version = 6.2.2
+modtime = 1426694938.544249000
+
+[views/btool]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.2.2
+modtime = 1426703554.600065000
+
+[commands/wgetgzip]
+access = read : [ * ], write : [ admin, power ]
+export = system
+owner = nobody
+version = 6.2.2
+modtime = 1426694976.764052000
+
+[views/netaddr]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.2.2
+modtime = 1426694999.285156000
+
+[views/wget_transform]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.2.2
+modtime = 1426695008.165947000
+
+[views/wgetgzip]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.2.2
+modtime = 1426695015.966162000
+
+[views/wgetgzip_transform_clone]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.2.2
+modtime = 1426695025.676686000
+
+[nav/default]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = nobody
+version = 6.2.2
+modtime = 1426695139.234184000
+
+[views/wgetcsv]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.2.2
+modtime = 1426712860.615602000
+
+[views/wgetxls]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.2.2
+modtime = 1427822835.534103000

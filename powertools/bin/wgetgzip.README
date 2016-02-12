@@ -1,0 +1,6 @@
+| wgetgzip url="http://list.iblocklist.com/?list=tor"
+
+~/code/splunk_db_connect_test/splunk/bin/splunk cmd python wgetgzip.py __EXECUTE__ url="http://list.iblocklist.com/?list=tor" < /dev/null
+
+| stats count | eval url="https://gist.githubusercontent.com/bshuler/d946385bde58b1c88c32/raw" | lookup wget url
+

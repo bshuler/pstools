@@ -1,0 +1,38 @@
+<form>
+  <label>netaddr</label>
+  <fieldset submitButton="true" autoRun="true">
+    <input type="text" token="field1">
+      <label>Search</label>
+      <default>| stats count | eval _raw="The Onion Router:1.64.28.170-1.64.28.180"</default>
+    </input>
+    <input type="text" token="field2">
+      <label>Extract Fields</label>
+      <default>| rex "(?P&lt;desc&gt;.*):(?P&lt;low_ip&gt;.*)-(?P&lt;high_ip&gt;.*)" | table desc low_ip high_ip</default>
+    </input>
+    <input type="text" token="field3">
+      <label>Expand IP range</label>
+      <default>| lookup iprange low_ip high_ip</default>
+    </input>
+    <input type="text" token="field4">
+      <label>mv expand</label>
+      <default>| mvexpand all_ips  | table desc all_ips</default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>netaddr</title>
+      <table>
+        <search>
+          <query>$field1$ $field2$ $field3$ $field4$</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="drilldown">cell</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

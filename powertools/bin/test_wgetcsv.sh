@@ -1,0 +1,1 @@
+cat test_wgetcsv.csv | $SPLUNK_HOME/bin/splunk cmd python wgetcsv.py
