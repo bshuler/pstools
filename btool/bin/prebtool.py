@@ -61,7 +61,7 @@ if __name__ == '__main__':
         stanza = ''
         lines = proc_out.split("\n")
 
-        re_index = re.compile("^(.*)\s+\[(.*)\]")
+        re_index = re.compile("^(.*).conf\s+\[(.*)\]")
         re_kv = re.compile("^(.*)\s+(\S+)\s+=\s+(.*)")
         
         results = []
