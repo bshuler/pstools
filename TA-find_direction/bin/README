@@ -1,0 +1,10 @@
+# Test lookup via splunk
+# | makeresults | eval src_ip="172.16.0.1" | eval dest_ip="8.8.8.8"| lookup direction src_ip dest_ip
+# | makeresults | eval dest_ip="172.16.0.1" | eval src_ip="8.8.8.8"| lookup direction src_ip dest_ip
+# | makeresults | eval dest_ip="8.8.8.8" | eval src_ip="8.8.8.8"| lookup direction src_ip dest_ip
+# | makeresults | eval dest_ip="172.16.0.1" | eval src_ip="172.16.0.1"| lookup direction src_ip dest_ip
+
+#
+# Test lookup via terminal
+# You can edit the test.csv to contain the IPs you want to test with
+# ./test.sh
