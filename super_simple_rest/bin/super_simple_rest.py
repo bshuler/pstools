@@ -10,7 +10,7 @@ class HelloWorld(rest.BaseRestHandler):
     def handle_POST(self):
         #pydevd_pycharm.settrace('localhost', port=12345, stdoutToServer=True, stderrToServer=True)
         self.response.setHeader("content-type", "text/html")
-        self.response.write("<p>Hello World</p>")
+        self.response.write("<p>Hello World</p>\n<p>systemAuth: %s</p>" % self.request['systemAuth'])
 
     #handle verbs, otherwise Splunk will throw an error
     handle_GET = handle_POST
